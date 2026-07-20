@@ -524,13 +524,13 @@ def demo() -> None:
     tf.keras.utils.set_random_seed(123)
 
     series = _make_series(n=2600, seed=123)
-    window = 40
+    window = 60
     k = 20
     H = 100
 
     # Train models (students implement train_model)
-    one_model, X_test_1, y_test_1 = train_model(series, window=window, horizon=1, epochs=15, seed=123, verbose=0)
-    k_model, X_test_k, y_test_k = train_model(series, window=window, horizon=k, epochs=15, seed=123, verbose=0)
+    one_model, X_test_1, y_test_1 = train_model(series, window=window, horizon=1, epochs=50, seed=123, verbose=0)
+    k_model, X_test_k, y_test_k = train_model(series, window=window, horizon=k, epochs=50, seed=123, verbose=0)
 
     # Create an initial window and ground-truth future from the end of the series
     init_window = series[-(window + H) : -H]
